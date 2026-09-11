@@ -1,12 +1,12 @@
 import OpenAI from "openai";
 import { NextResponse } from "next/server";
 
-  const client = new OpenAI({
-    apiKey: process.env.OPENAI_API_KEY,
-  });
-
 export async function POST(request) {
   try {
+    const client = new OpenAI({
+      apiKey: process.env.OPENAI_API_KEY,
+    });
+
     const body = await request.json();
 
     const message = body.message?.trim();
